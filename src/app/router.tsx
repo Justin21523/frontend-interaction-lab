@@ -3,6 +3,7 @@ import AppLayout from '@/components/layout/AppLayout';
 import HomePage from '@/features/home/HomePage';
 import MotionLabPage from '@/features/motion-lab/MotionLabPage';
 import DashboardPage from '@/features/dashboard/DashboardPage';
+import FormLabPage from '@/features/form-lab/FormLabPage'; // New Import
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: 'motion-lab', element: <MotionLabPage /> },
       { path: 'dashboard', element: <DashboardPage /> },
+      { path: 'form-lab', element: <FormLabPage /> }, // New Route
     ],
   },
 ]);

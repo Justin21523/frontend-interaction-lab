@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Activity, LayoutDashboard } from 'lucide-react';
+import { Home, Activity, LayoutDashboard, FileText } from 'lucide-react'; 
 import { cn } from '@/lib/utils';
 import { useAppStore } from '@/stores/appStore';
 
@@ -7,7 +7,9 @@ const navItems = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/motion-lab', label: 'Motion Lab', icon: Activity },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/form-lab', label: 'Form Lab', icon: FileText }, // New Nav Item
 ];
+
 
 export default function Sidebar() {
   const { isSidebarCollapsed } = useAppStore();
