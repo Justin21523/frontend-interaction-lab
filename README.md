@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# Frontend Interaction Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React 19 laboratory for exploring advanced frontend interactions, animations, and data visualizations. This project serves as a playground for implementing high-performance, accessible, and visually stunning user interfaces.
 
-Currently, two official plugins are available:
+![Project Screenshot](public/screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Technologies
 
-## React Compiler
+- **Framework:** React 19 with TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS 4.0
+- **Animations:** Framer Motion (Motion)
+- **State Management:** Zustand
+- **Data Fetching:** TanStack Query (React Query)
+- **Data Visualization:** Plotly.js / React-Plotly
+- **Form Management:** React Hook Form + Zod
+- **UI Components:** Shadcn/UI (Radix UI)
+- **Routing:** React Router 7
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+### 1. 🎭 Motion Lab
+Interactive animation playground showcasing:
+- Staggered entry animations
+- Scale-on-hover effects
+- Smooth page transitions
+- Gesture-based interactions
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. 📊 Analytics Dashboard
+Comprehensive data visualization featuring:
+- **Weekly Progress:** Line charts for performance tracking.
+- **Skill Distribution:** Bar charts showing technical proficiency.
+- **Package Usage:** Pie charts analyzing dependency distribution.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 3. 📝 Form Lab
+Advanced form implementation focusing on:
+- Real-time validation with Zod.
+- Complex nested data structures.
+- Dynamic field arrays.
+- Performance-optimized inputs.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 4. 🧩 Component Gallery
+A collection of reusable, atomic UI components built with accessibility and customization in mind.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+- npm or pnpm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Justin21523/frontend-interaction-lab.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🏗️ Project Structure
+
+```text
+src/
+├── api/          # API integration layer
+├── app/          # Router and core app logic
+├── components/   # Reusable UI components
+│   ├── charts/   # Plotly chart components
+│   ├── layout/   # Page layouts (Sidebar, Header)
+│   ├── motion/   # Framer Motion wrappers
+│   └── ui/       # Atomic UI elements (Shadcn)
+├── features/     # Feature-based modules
+├── hooks/        # Custom React hooks
+├── lib/          # Utilities and configurations
+├── stores/       # Zustand state stores
+└── types/        # TypeScript definitions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Developed with ❤️ by [Justin](https://github.com/Justin21523)

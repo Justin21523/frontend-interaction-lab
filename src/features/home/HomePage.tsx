@@ -29,7 +29,7 @@ export default function HomePage() {
 
       <FadeIn delay={0.6}>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {['React 18+', 'TypeScript', 'Tailwind CSS'].map((tech, i) => (
+          {['React 18+', 'TypeScript', 'Tailwind CSS'].map((tech) => (
             <div key={tech} className="p-6 bg-slate-50 rounded-xl border border-slate-200">
               <h3 className="font-bold text-slate-800">{tech}</h3>
               <p className="text-sm text-slate-500 mt-2">Core foundation of this lab.</p>

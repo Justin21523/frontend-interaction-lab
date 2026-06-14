@@ -12,8 +12,16 @@ export default function SkillBarChart({ data }: SkillBarChartProps) {
       <div className="flex-1 flex items-center justify-center">
         <Plot
           data={[data]}
-          layout={{ width: 380, height: 280, margin: { t: 20, b: 40, l: 40, r: 20 } }}
-          config={{ displayModeBar: false }}
+          layout={{
+            autosize: true,
+            height: 280,
+            margin: { t: 20, b: 40, l: 40, r: 20 },
+            paper_bgcolor: 'transparent',
+            plot_bgcolor: 'transparent',
+          }}
+          config={{ displayModeBar: false, responsive: true }}
+          className="w-full"
+          useResizeHandler
         />
       </div>
     </div>

@@ -1,14 +1,27 @@
 import Plot from 'react-plotly.js';
-import { weeklyHoursData } from '@/data/chartData';
+import type { PieChartData } from '@/types/chart.types';
 
-export default function WeeklyLineChart() {
+interface PackagePieChartProps {
+  data: PieChartData;
+}
+
+export default function PackagePieChart({ data }: PackagePieChartProps) {
   return (
     <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-      <h3 className="text-lg font-semibold text-slate-800 mb-2">Weekly Learning Hours</h3>
+      <h3 className="text-lg font-semibold text-slate-800 mb-2">Package Categories</h3>
       <Plot
-        data={[weeklyHoursData]}
-        layout={{ width: 400, height: 300, margin: { t: 20, b: 40, l: 40, r: 20 } }}
-        config={{ displayModeBar: false }}
+        data={[data]}
+        layout={{
+          autosize: true,
+          height: 300,
+          margin: { t: 20, b: 20, l: 20, r: 20 },
+          paper_bgcolor: 'transparent',
+          plot_bgcolor: 'transparent',
+          showlegend: true,
+        }}
+        config={{ displayModeBar: false, responsive: true }}
+        className="w-full"
+        useResizeHandler
       />
     </div>
   );

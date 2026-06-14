@@ -1,21 +1,23 @@
-export interface BarChartData {
+import type * as Plotly from 'plotly.js';
+
+export type BarChartData = Plotly.Data & {
   x: string[];
   y: number[];
   type: 'bar';
   marker: { color: string };
-}
+};
 
-export interface LineChartData {
+export type LineChartData = Plotly.Data & {
   x: string[];
   y: number[];
   type: 'scatter';
   mode: 'lines+markers';
   line: { color: string };
-}
+};
 
-export interface PieChartData {
+export type PieChartData = Plotly.Data & {
   values: number[];
   labels: string[];
   type: 'pie';
   marker: { colors: string[] };
-}
+};

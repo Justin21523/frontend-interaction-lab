@@ -7,7 +7,7 @@ const navItems = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/motion-lab', label: 'Motion Lab', icon: Activity },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { path: '/form-lab', label: 'Form Lab', icon: FileText }, // New Nav Item
+  { path: '/form-lab', label: 'Form Lab', icon: FileText },
 ];
 
 

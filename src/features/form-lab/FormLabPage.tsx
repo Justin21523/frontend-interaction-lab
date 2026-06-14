@@ -19,7 +19,7 @@ import SlideUp from '@/components/motion/SlideUp';
 // Define strict validation schema with Zod
 const formSchema = z.object({
   topic: z.string().min(2, { message: 'Topic must be at least 2 characters.' }),
-  hours: z.coerce.number().min(1, { message: 'Must be at least 1 hour.' }).max(12, { message: 'Cannot exceed 12 hours.' }),
+  hours: z.number().min(1, { message: 'Must be at least 1 hour.' }).max(12, { message: 'Cannot exceed 12 hours.' }),
   notes: z.string().optional(),
 });
 
@@ -36,7 +36,6 @@ export default function FormLabPage() {
   });
 
   function onSubmit(values: FormValues) {
-    console.log('Validated Form Data:', values);
     toast.success('Learning record saved!', {
       description: `You studied ${values.topic} for ${values.hours} hours.`,
     });
@@ -79,7 +78,13 @@ export default function FormLabPage() {
                     <FormItem>
                       <FormLabel>Hours Studied</FormLabel>
                       <FormControl>
-                        <Input type="number" min={1} max={12} {...field} />
+                        <Input
+                          type="number"
+                          min={1}
+                          max={12}
+                          {...field}
+                          onChange={(event) => field.onChange(event.target.valueAsNumber)}
+                        />
                       </FormControl>
                       <FormDescription>Between 1 and 12 hours.</FormDescription>
                       <FormMessage />
